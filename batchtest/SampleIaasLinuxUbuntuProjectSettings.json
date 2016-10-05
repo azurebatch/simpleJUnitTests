@@ -1,0 +1,29 @@
+{
+    "version": "0.1",
+    "vmConfigs": {
+        "numVMs": 1,
+        "maxTasksPerNode": 1,
+        "vmSize": "STANDARD_D1",
+        "virtualMachineConfig": { 
+            "publisher": "Canonical",
+            "offer": "UbuntuServer",
+            "sku": "16.04.0-LTS",
+            "version": "latest",
+            "nodeAgentSKUId": "batch.node.ubuntu 16.04"
+        },
+        "poolKeepAlive": false,
+        "vmSetupCommandLine": "ls /"
+    },
+    "resources": {
+        "localResources": [
+        ],
+        "azureStorageBlobs": [
+        ]
+    },
+    "testConfigs": {
+        "resultFilePatterns": [
+            "*.xml"
+        ],
+        "resultFilesSaveToFolder": "azurebatchtemp/results"
+    }
+}

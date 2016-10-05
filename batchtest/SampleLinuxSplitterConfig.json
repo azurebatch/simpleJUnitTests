@@ -1,0 +1,36 @@
+{
+    "version": "0.1",
+    "taskCommandDictionary":[
+    ],
+    "jobConfigs": {
+        "jobTimeoutInMinutes": 30,
+        "defaultTaskTimeoutInMinutes": 10,
+        "tasks": [
+            {
+                "name": "all tests",
+                "commands" : [
+                    "git clone https://github.com/azurebatch/simpleJUnitTests.git",
+                    "cd simpleJUnitTests",
+                    "mvn test"
+                ]
+            },
+            {
+                "name": "all tests2",
+                "commands" : [
+                    "git clone https://github.com/azurebatch/simpleJUnitTests.git",
+                    "cd simpleJUnitTests",
+                    "mvn test"
+                ]
+            },
+            {
+                "name": "one test",
+                "commands" : [
+                    "git clone https://github.com/azurebatch/simpleJUnitTests.git",
+                    "cd simpleJUnitTests",
+                    "mvn -Dtest=*#sleep1m test"
+                ],
+                "timeOutMinutes" : "5"
+            }
+        ]
+    }
+}
