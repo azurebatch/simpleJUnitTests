@@ -35,5 +35,5 @@ fi
 
 if ! [ -x "$(command -v mvn)" ]; then
   echo 'maven is not installed, installing'
-  InstallJDK
+  InstallMvn
 fi
