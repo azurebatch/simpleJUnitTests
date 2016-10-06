@@ -12,17 +12,20 @@
             "nodeAgentSKUId": "batch.node.ubuntu 16.04"
         },
         "poolKeepAlive": false,
-        "vmSetupCommandLine": "ls /"
+        "vmSetupCommandLine": "/bin/sh SampleVMSetup.sh"
     },
     "resources": {
         "localResources": [
+            {
+                "source": "batchtest/SampleVMSetup.sh"
+            }
         ],
         "azureStorageBlobs": [
         ]
     },
     "testConfigs": {
         "resultFilePatterns": [
-            "*.xml"
+            "simpleJUnitTests/target/surefire-reports/*.xml"
         ],
         "resultFilesSaveToFolder": "azurebatchtemp/results"
     }
