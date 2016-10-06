@@ -30,7 +30,7 @@ InstallMvn () {
 
 if ! [ -x "$(command -v javac)" ]; then
   echo 'jdk is not installed, installing'
-#  InstallJDK
+  InstallJDK
 fi
 
 if ! [ -x "$(command -v mvn)" ]; then
