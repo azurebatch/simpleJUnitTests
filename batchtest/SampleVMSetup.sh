@@ -19,7 +19,7 @@ InstallJDK () {
   case "$platform" in 
     *Ubuntu*)
       sudo apt-get update
-      sudo apt-get --assume-yes install openjdk-7-jdk
+      sudo apt-get --assume-yes install default-jdk
       ;; 
      *)  
         echo "Not supported on this OS yet" 
