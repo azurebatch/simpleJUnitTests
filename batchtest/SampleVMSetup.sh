@@ -2,6 +2,19 @@
 
 platform=`python -mplatform`
 
+InstallGit () {
+  case "$platform" in 
+    *Ubuntu*)
+      sudo apt-get update
+      sudo apt-get --assume-yes install git
+      ;; 
+     *)  
+        echo "Not supported on this OS yet" 
+        exit 1 # Command to come out of the program with status 1
+        ;; 
+  esac
+}
+
 InstallJDK () {
   case "$platform" in 
     *Ubuntu*)
@@ -27,6 +40,11 @@ InstallMvn () {
         ;; 
   esac
 }
+
+if ! [ -x "$(command -v git)" ]; then
+  echo 'git is not installed, installing'
+  InstallGit
+fi
 
 if ! [ -x "$(command -v javac)" ]; then
   echo 'jdk is not installed, installing'
