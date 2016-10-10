@@ -1,0 +1,32 @@
+{
+    "version": "0.1",
+    "vmConfigs": {
+        "numVMs": 1,
+        "maxTasksPerNode": 1,
+        "vmSize": "STANDARD_D1",
+        "virtualMachineConfig": { 
+            "publisher": "OpenLogic",
+            "offer": "CentOS",
+            "sku": "7.0",
+            "version": "latest",
+            "nodeAgentSKUId": "batch.node.centos 7"
+        },
+        "poolKeepAlive": false,
+        "vmSetupCommandLine": "/bin/sh SampleCentosVMSetup.sh"
+    },
+    "resources": {
+        "localResources": [
+            {
+                "source": "batchtest/SampleCentosVMSetup.sh"
+            }
+        ],
+        "azureStorageBlobs": [
+        ]
+    },
+    "testConfigs": {
+        "resultFilePatterns": [
+            "simpleJUnitTests/target/surefire-reports/*.xml"
+        ],
+        "resultFilesSaveToFolder": "azurebatchtemp/results"
+    }
+}
