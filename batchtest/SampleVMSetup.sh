@@ -5,11 +5,15 @@ platform=`python -mplatform`
 InstallGit () {
   case "$platform" in 
     *Ubuntu*)
-      sudo apt-get update
-      sudo apt-get --assume-yes install git
+      apt-get update
+      apt-get --assume-yes install git
+      ;; 
+    *centos*)
+      yum check-update
+      yum install -y git
       ;; 
      *)  
-        echo "Not supported on this OS yet" 
+        echo "Not supported installing Git on this OS yet" 
         exit 1 # Command to come out of the program with status 1
         ;; 
   esac
@@ -18,11 +22,15 @@ InstallGit () {
 InstallJDK () {
   case "$platform" in 
     *Ubuntu*)
-      sudo apt-get update
-      sudo apt-get --assume-yes install default-jdk
+      apt-get update
+      apt-get --assume-yes install default-jdk
+      ;; 
+    *centos*)
+      yum check-update
+      yum install -y java-1.7.0-openjdk-devel
       ;; 
      *)  
-        echo "Not supported on this OS yet" 
+        echo "Not supported installing JDK on this OS yet" 
         exit 1 # Command to come out of the program with status 1
         ;; 
   esac
@@ -31,11 +39,15 @@ InstallJDK () {
 InstallMvn () {
   case "$platform" in 
     *Ubuntu*)
-      sudo apt-get update
-      sudo apt-get --assume-yes install maven
+      apt-get update
+      apt-get --assume-yes install maven
+      ;; 
+    *centos*)
+      yum check-update
+      yum install -y maven
       ;; 
      *)  
-        echo "Not supported on this OS yet" 
+        echo "Not supported installing Mvn on this OS yet" 
         exit 1 # Command to come out of the program with status 1
         ;; 
   esac
