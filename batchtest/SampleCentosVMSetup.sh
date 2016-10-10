@@ -26,3 +26,7 @@ fi
 
 # Call SampleVMSetup.sh to install git, jdk and mvn
 source SampleVMSetup.sh
+
+# Upgrade nss on centos otherwise we will see InternalError exception in 
+# sun.security.ec.SunEC.initialize when build sample JUnit test
+yum upgrade nss

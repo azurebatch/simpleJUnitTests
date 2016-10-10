@@ -18,6 +18,9 @@
         "localResources": [
             {
                 "source": "batchtest/SampleCentosVMSetup.sh"
+            },
+            {
+                "source": "batchtest/SampleVMSetup.sh"
             }
         ],
         "azureStorageBlobs": [
